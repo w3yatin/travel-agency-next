@@ -1,0 +1,50 @@
+[
+    {
+        "title": "Creative Design",
+        "excerpt": "Digital marketing uses online strategies to promote brands and engage audiences.",
+        "icon": "CreativeIcon",
+        "slug":"creative-design"
+    },
+    {
+        "title": "Digital marketing",
+        "excerpt": "Email marketing fosters relationships through personalized communication.",
+        "icon": "DigitalIcon",
+        "slug":"digital-marketing"
+    },
+    {
+        "title": "Branding Design",
+        "excerpt": "Content marketing builds trust by delivering valuable information to target audiences.",
+        "icon": "BrandIcon",
+        "slug":"branding-design"
+    },
+    {
+        "title": "Web Development",
+        "excerpt": "Social media connects brands with communities through interactive content.",
+        "icon":"WebIcon",
+        "slug":"web-development"
+    },
+    {
+        "title": "Creative Design",
+        "excerpt": "SEO improves website visibility by optimizing for search engines.",
+        "icon": "CreativityIcon",
+        "slug":"creative-design1"
+    },
+    {
+        "title": "Digital Marketing",
+        "excerpt": "Influencer marketing amplifies brand messages through trusted voices.",
+        "icon": "DigitalMarketingIcon",
+        "slug":"digital-marketing1"
+    },
+    {
+        "title": "Branding Design",
+        "excerpt": "Video marketing captures attention with dynamic visual content.",
+        "icon": "BrandingDesignIcon",
+        "slug":"branding-design1"
+    },
+    {
+        "title": "Web Development",
+        "excerpt":"Analytics help brands refine strategies through data-driven insights.",
+        "icon": "WebDevelopmentIcon",
+        "slug":"web-development1"
+    }
+]

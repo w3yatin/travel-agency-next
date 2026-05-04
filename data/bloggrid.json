@@ -1,0 +1,75 @@
+ [
+  {
+    "img": "/images/blog/grid/img1.png",
+    "title": "How to Create a Stunning",
+    "publishedAt":"15 Jun 2026",
+    "author":"Liam Anderson"
+  },
+  {
+    "img": "/images/blog/grid/img2.png",
+    "title": "Journeys Around the World",
+    "publishedAt":"16 Jun 2026",
+    "author":"Ethan Bennett"
+  },
+  {
+    "img": "/images/blog/grid/img3.png",
+    "title": "Inspiring Travel Experiences",
+    "publishedAt":"17 Jun 2026",
+    "author":"Mason Hayes"
+    
+  },
+  {
+    "img": "/images/blog/grid/img4.png",
+    "title": "Stories from Our Journeys",
+    "publishedAt":"18 Jun 2026",
+    "author":"Henry Walker"
+  },
+  {
+    "img": "/images/blog/grid/img5.png",
+    "title": "Destination Stories & Guides",
+    "publishedAt":"19 Jun 2026",
+    "author":"Nathan Brooks"
+  },
+  {
+    "img": "/images/blog/grid/img6.png",
+    "title": "Explore Destinations Worldwide",
+    "publishedAt":"20 Jun 2026",
+    "author":"Liam Anderson"
+  },
+  {
+    "img": "/images/blog/grid/img7.png",
+    "title": "Your Trusted Travel Guide",
+    "publishedAt":"21 Jun 2026",
+    "author":"Ethan Bennett"
+  },
+  {
+    "img": "/images/blog/grid/img8.png",
+    "title": "Where Every Journey Begins",
+    "publishedAt":"22 Jun 2026",
+    "author":"Mason Hayes"
+  }, 
+  {"img": "/images/blog/grid/img1.png",
+    "title": "How to Create a Stunning",
+    "publishedAt":"15 Jun 2026",
+    "author":"Liam Anderson"
+  },
+  {
+    "img": "/images/blog/grid/img2.png",
+    "title": "Journeys Around the World",
+    "publishedAt":"16 Jun 2026",
+    "author":"Ethan Bennett"
+  },
+  {
+    "img": "/images/blog/grid/img3.png",
+    "title": "Inspiring Travel Experiences",
+    "publishedAt":"17 Jun 2026",
+    "author":"Mason Hayes"
+    
+  },
+  {
+    "img": "/images/blog/grid/img4.png",
+    "title": "Stories from Our Journeys",
+    "publishedAt":"18 Jun 2026",
+    "author":"Henry Walker"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Bengal Wild Escape",
+    "price": "$19",
+    "image": "/images/tour/style1/img1.png",
+    "link":"/tour/island-wilderness"
+  },
+  {
+    "title": "Wild Escape Bengal",
+    "price": "$129",
+    "image": "/images/tour/style1/img2.png",
+    "link":"/tour/amazon-deep-forest-expedition"
+  },
+  {
+    "title": "Bengal Wild Escape",
+    "price": "$139",
+    "image": "/images/tour/style1/img3.png",
+    "link":"/tour/dunes-desert-tracks"
+  },
+  {
+    "title": "Verdant Reach",
+    "price": "$149",
+    "image": "/images/tour/style1/img4.png",
+    "link":"/tour/himalayan-snow-leopard-quest"
+  },
+  {
+    "title": "Thar Desert",
+    "price": "$159",
+    "image": "/images/tour/style1/img5.png",
+    "link":"/tour/island-wilderness"
+  },
+  {
+    "title": "French Polynesia",
+    "price": "$169",
+    "image": "/images/tour/style1/img6.png",
+    "link":"/tour/amazon-deep-forest-expedition"
+  }
+]

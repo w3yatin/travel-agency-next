@@ -1,0 +1,136 @@
+[
+    {
+        "image":"/images/blog/list/img1.png",
+        "location":"Mountains",
+        "title":"Why Booking with a Travel Agency Saves You Time & Money.",
+        "img":"/images/avatar/pic1.png",
+        "author":"Admin",
+        "publishedAt":"25 Jan 2026",
+        "slug":"standard-post",
+        "layout": "standard"
+
+    },
+    {
+        "image":"/images/blog/list/img2.png",
+        "location":"Forest",
+        "title":"Hidden Gems: Offbeat Locations You Should Explore This Year.",
+        "img":"/images/avatar/pic2.png",
+        "author":"Admin",
+        "publishedAt":"20 Jan 2026",
+        "slug":"status-slider",
+        "layout": "status"
+    },
+    {
+        "image":"/images/blog/list/img3.png",
+        "location":"Desert",
+        "title":"Travel Smarter: Essential Tips for Hassle-Free Holidays.",
+        "img":"/images/avatar/pic3.png",
+        "author":"Admin",
+        "publishedAt":"11 Jan 2026",
+        "slug":"corner-post",
+        "layout": "corner"
+    },
+    {
+        "image":"/images/blog/list/img1.png",
+        "location":"Mountains",
+        "title":"Why Booking with a Travel Agency Saves You Time & Money.",
+        "img":"/images/avatar/pic1.png",
+        "author":"Admin",
+        "publishedAt":"25 Jan 2026",
+        "slug":"side-post",
+        "layout": "side"
+    },
+    {
+        "image":"/images/blog/list/img2.png",
+        "location":"Forest",
+        "title":"Hidden Gems: Offbeat Locations You Should Explore This Year.",
+        "img":"/images/avatar/pic2.png",
+        "author":"Admin",
+        "publishedAt":"20 Jan 2026",
+        "slug":"tutorial-post",
+        "layout": "tutorial"
+    },
+    {
+        "image":"/images/blog/list/img3.png",
+        "location":"Desert",
+        "title":"Travel Smarter: Essential Tips for Hassle-Free Holidays.",
+        "img":"/images/avatar/pic3.png",
+        "author":"Admin",
+        "publishedAt":"11 Jan 2026",
+        "slug":"post-slider",
+        "layout": "slider"
+
+    },
+    {
+        "image":"/images/blog/list/img1.png",
+        "location":"Mountains",
+        "title":"Why Booking with a Travel Agency Saves You Time & Money.",
+        "img":"/images/avatar/pic1.png",
+        "author":"Admin",
+        "publishedAt":"25 Jan 2026",
+        "slug":"post-quote",
+        "layout": "quote"
+    },
+    {
+        "image":"/images/blog/list/img2.png",
+        "location":"Forest",
+        "title":"Hidden Gems: Offbeat Locations You Should Explore This Year.",
+        "img":"/images/avatar/pic2.png",
+        "author":"Admin",
+        "publishedAt":"20 Jan 2026",
+        "slug":"post-gallery",
+        "layout": "gallery"
+    },
+    {
+        "image":"/images/blog/list/img3.png",
+        "location":"Desert",
+        "title":"Travel Smarter: Essential Tips for Hassle-Free Holidays.",
+        "img":"/images/avatar/pic3.png",
+        "author":"Admin",
+        "publishedAt":"11 Jan 2026",
+        "slug":"header-image",
+        "layout": "header"
+
+    },
+    {
+        "image":"/images/blog/list/img1.png",
+        "location":"Mountains",
+        "title":"Why Booking with a Travel Agency Saves You Time & Money.",
+        "img":"/images/avatar/pic1.png",
+        "author":"Admin",
+        "publishedAt":"25 Jan 2026",
+        "slug":"post-image",
+        "layout": "image"
+    },
+    {
+        "image":"/images/blog/list/img2.png",
+        "location":"Forest",
+        "title":"Hidden Gems: Offbeat Locations You Should Explore This Year.",
+        "img":"/images/avatar/pic2.png",
+        "author":"Admin",
+        "publishedAt":"20 Jan 2026",
+        "slug":"link-post",
+        "layout": "link"
+    },
+    {
+        "image":"/images/blog/list/img3.png",
+        "location":"Desert",
+        "title":"Travel Smarter: Essential Tips for Hassle-Free Holidays.",
+        "img":"/images/avatar/pic3.png",
+        "author":"Admin",
+        "publishedAt":"11 Jan 2026",
+        "slug":"video-post",
+        "layout": "video"
+
+    },
+    {
+        "image":"/images/blog/list/img1.png",
+        "location":"Mountains",
+        "title":"Why Booking with a Travel Agency Saves You Time & Money.",
+        "img":"/images/avatar/pic1.png",
+        "author":"Admin",
+        "publishedAt":"25 Jan 2026",
+        "slug":"audio-post",
+        "layout": "audio"
+    }
+]

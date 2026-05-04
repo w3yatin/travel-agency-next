@@ -1,0 +1,44 @@
+.custom-accordion.style-1 .accordion-item{
+    @apply mb-3.75 bg-white text-secondary rounded-2xl;
+}
+.custom-accordion.style-1 .accordion-item .accordion-header {
+    @apply py-5 sm:px-8.75 px-3.75  w-full flex justify-between items-center text-start cursor-pointer duration-300;
+}
+.custom-accordion.style-1 .accordion-item .accordion-header .arrow {
+    @apply text-secondary duration-300;
+}
+.custom-accordion.style-1 .accordion-item .accordion-header.open {
+    @apply border-b border-black/20;
+}
+.custom-accordion.style-1 .accordion-item .accordion-header.open .arrow.active i {
+    @apply rotate-90;
+}
+.custom-accordion.style-1 .accordion-item .accordion-content .content-inner{
+    @apply sm:px-8.75 px-3.75 py-3.5 text-bodycolor xl:text-xl sm:text-base text-sm;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header {
+    @apply py-5 text-secondary border-b border-black/10 w-full flex justify-between items-center text-start cursor-pointer duration-300;
+}
+.custom-accordion.style-2 .accordion-item .accordion-content .content-inner{
+    @apply sm:py-6.5 py-4 text-bodycolor xl:text-2xl sm:text-base text-sm border-b border-black/10 font-light;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header .arrow{
+    @apply size-7.5;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header .arrow .fa-plus {
+    @apply block text-black/60 sm:text-2xl text-xl;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header .arrow .fa-minus {
+    @apply hidden text-2xl;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header.open .arrow.active .fa-minus {
+    @apply block;
+}
+.custom-accordion.style-2 .accordion-item .accordion-header.open .arrow.active .fa-plus {
+    @apply hidden;
+}
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}

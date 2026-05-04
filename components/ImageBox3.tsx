@@ -1,0 +1,81 @@
+"use client";
+import { useLayoutEffect, useRef } from "react";
+import Image from "next/image";
+import { IMAGES } from "@/utilities/Constants";
+
+
+export default function ImageBox3() {
+     const sectionRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    let ctx: any;
+
+    const loadGSAP = async () => {
+      const gsap = (await import("gsap")).default;
+      const ScrollTrigger = (await import("gsap/ScrollTrigger")).default;
+     const Lenis = (await import("lenis")).default;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      const lenis = new Lenis();
+
+      function raf(time: number) {
+        lenis.raf(time);
+        ScrollTrigger.update();
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+
+      ctx = gsap.context(() => {
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach((card: Element) => {
+          const cover = card.querySelector(".card-cover");
+
+          if (!cover) return;
+
+          gsap.to(cover, {
+            yPercent: 25,
+            ease: "none",
+            scrollTrigger: {
+              trigger: card,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+             
+            },
+          });
+        });
+      }, sectionRef);
+    };
+
+    loadGSAP();
+
+    return () => {
+      ctx?.revert();
+    };
+  }, []);
+    return(
+       <section ref={sectionRef}>
+      <div className="hidden">
+        <h2 className="xl:text-6xl md:text-5xl text-4xl">Our Work</h2>
+      </div>
+
+      <div className="container-full">
+        <div className="card relative overflow-hidden">
+          <figure className="card-cover-container">
+            <Image
+              src={IMAGES.aboutlarge5}
+              alt="/"
+              width={1200}
+              height={800}
+              className="card-cover size-full min-h-75 object-cover"
+            />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    );
+}

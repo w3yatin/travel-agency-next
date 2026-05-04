@@ -1,0 +1,81 @@
+
+[
+  {
+    "title": "Island Wilderness.",
+    "slug":"island-wilderness",
+    "image":"/images/tour/style2/img1.png",
+    "location": "Namibia",
+    "days": "1 Days",
+    "nights": "2 Nights",
+    "price": "$1299",
+    "oldPrice": "$1500",
+    "reviews": 18,
+    "layout": "detail1",
+    "description":"Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape."
+  },
+  {
+    "title": "Amazon Deep Forest Expedition.",
+    "slug":"amazon-deep-forest-expedition",
+    "image": "/images/tour/style2/img2.png",
+    "location": "Namibia",
+    "days": "2 Days",
+    "nights": "3 Nights",
+    "price": "$1349",
+    "oldPrice": "$1450",
+    "reviews": 24,
+    "layout": "detail2",
+    "description":"Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape."
+  },
+  {
+    "title": "Dunes & Desert Tracks.",
+    "slug":"dunes-desert-tracks",
+    "image": "/images/tour/style2/img3.png",
+    "location": "Namibia",
+    "days": "3 Days",
+    "nights": "4 Nights",
+    "price": "$1899",
+    "oldPrice": "$1530",
+    "reviews": 120,
+    "layout": "detail1",
+    "description":"Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape."
+  },
+  {
+    "title": "Himalayan Snow Leopard Quest.",
+    "slug":"himalayan-snow-leopard-quest",
+    "image": "/images/tour/style2/img4.png",
+    "location": "Namibia",
+    "days": "4 Days",
+    "nights": "5 Nights",
+    "price": "$1259",
+    "oldPrice": "$1050",
+    "reviews": 18,
+    "layout": "detail2",
+    "description":"Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape."
+  },
+  {
+     "title": "Island Wilderness.",
+    "slug":"island-wilderness",
+    "image":"/images/tour/style2/img1.png",
+    "location": "Namibia",
+    "days": "6 Days",
+    "nights": "4 Nights",
+    "price": "$1299",
+    "oldPrice": "$1030",
+    "reviews": 13,
+    "layout": "detail1",
+    "description":"Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape."
+  },
+  {
+    "title": "Amazon Deep Forest Expedition.",
+    "slug":"amazon-deep-forest-expedition",
+    "image": "/images/tour/style2/img2.png",
+    "location": "Namibia",
+    "days": "6 Days",
+    "nights": "5 Nights",
+    "price": "$1899",
+    "oldPrice": "$1360",
+    "reviews": 8,
+    "layout": "detail2",
+    "description":"Wildlife thrives in the silence and stillness of Namibia's surreal desert landscape."
+  }
+]
