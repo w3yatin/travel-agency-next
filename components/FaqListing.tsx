@@ -51,6 +51,7 @@ function reducer(state: State, action: Action): State {
   }
 }
 
+
 export default function FaqListingContent() {
   const tabKeys: (keyof FaqCategory)[] = [
     "general",
@@ -161,7 +162,9 @@ export default function FaqListingContent() {
                         </button>
 
                         <div
-                          ref={(el) => (leftRefs.current[index] = el)}
+                          ref={(el) => {
+                            leftRefs.current[index] = el;
+                          }}
                   style={{
                     maxHeight:
                       leftState.activeIndex === index
@@ -214,7 +217,9 @@ export default function FaqListingContent() {
                                         className={`accordion-content ${
                                          rightState.activeIndex === index ? "active" : ""
                                         } overflow-hidden transition-all duration-500`}
-                                         ref={(el) => (rightRefs.current[index] = el)}
+                                         ref={(el) => {
+                                            rightRefs.current[index] = el;
+                                          }}
                                           style={{
                                             maxHeight:
                                               rightState.activeIndex === index

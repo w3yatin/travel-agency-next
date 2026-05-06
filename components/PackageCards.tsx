@@ -16,7 +16,7 @@ export default function PackageCards() {
                         </div>
                     ))}
                     <div className="card-container xl:w-1/2 w-full mb-5">
-                        <Link href="/tour/island-wilderness" className="bg-white rounded-xxl flex items-center justify-center p-10 size-full sm:min-h-47.5 min-h-25">
+                        <Link href="/tour/island-wilderness" className="bg-white rounded-xxl flex items-center justify-center p-10 size-full sm:min-h-47.5 min-h-25 h-auto">
                             <h4 className="sm:text-4xxl text-2xxl text-center">View All Packages</h4>
                         </Link>
                     </div>

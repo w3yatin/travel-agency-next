@@ -6,7 +6,7 @@ import PackageCard from "./cards/PackageCard"
 import { IMAGES } from "@/utilities/Constants";
 import Image from "next/image";
 import Link from "next/link";
-import DatePicker from "@/DatePicker";
+import DatePicker from "@/components/DatePicker";
 
 
 type PackageProps = {

@@ -6,6 +6,7 @@
 @import "./layout/layout.css";
 @import "./pages/page.css";
 @import "swiper/css";
+@import "swiper/css/pagination";
 @import "flatpickr/dist/flatpickr.min.css";
 /* CUSTOM THEME */
 @theme {

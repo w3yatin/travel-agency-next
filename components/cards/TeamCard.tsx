@@ -42,11 +42,11 @@ const TeamCard: React.FC<TeamCardProps> = ({ team }) => {
                     </svg>
                 </Link>
             </div>
-            <div className="item-image absolute w-75 h-87.5 pointer-events-none top-0 left-0 overflow-hidden opacity-0 max-sm:hidden">
-                <div className="reveal-image relative h-full w-full bg-cover bg-center rounded-2xl overflow-hidden" 
+            <div className="item-image max-sm:hidden absolute w-75 h-87.5 pointer-events-none top-0 left-0 overflow-hidden opacity-0 z-50
+            ">
+                <div className="reveal-image position-relative h-full w-full bg-cover bg-position-center" 
                 >
                 <Image
-                    
                     src={team.img}
                     alt={team.name}
                     width={300}

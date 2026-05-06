@@ -41,7 +41,7 @@ export default function ImageThumbSwiper() {
                       <Image  src={IMAGES.gallerysliderthumbs1} className="w-full" alt="pic1" />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Image  src={IMAGES.gallerysliderthumbs1} className="w-full" alt="pic2" />
+                      <Image  src={IMAGES.gallerysliderthumbs2} className="w-full" alt="pic2" />
                     </SwiperSlide>
                     <SwiperSlide>
                      <Image  src={IMAGES.gallerysliderthumbs3} className="w-full" alt="pic3" />

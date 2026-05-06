@@ -49,7 +49,7 @@ import TourCard from "./cards/TourCard";
                     className="tour-swiper"
                     >
                         {tourData.map((item, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} >
                             <TourCard  tour={item}/>
                         </SwiperSlide>
                         ))}

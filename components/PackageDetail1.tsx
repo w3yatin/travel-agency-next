@@ -160,11 +160,10 @@ export default function PackageDetail1() {
                     modules={[Autoplay]}
                     speed={1500}
                     slidesPerView={1}
-                    spaceBetween={30}
+                    spaceBetween={20}
                     loop={true}
                     autoplay={{
                         delay: 3000,
-                        disableOnInteraction: false,
                     }}
                     breakpoints={{
                         700: {
@@ -174,14 +173,14 @@ export default function PackageDetail1() {
                         slidesPerView: 3,
                         },
                         1400: {
-                        slidesPerView: 2.7,
-                        spaceBetween: 50,
+                        slidesPerView: 3,
                         },
                     }}
-                    className="tour-swiper"
+  
+                    className="tour-swiper-2"
                     >
                         {tourData.map((item, index) => (
-                        <SwiperSlide key={index}>
+                        <SwiperSlide key={index} className="!w-[420px]">
                             <TourCard  tour={item}/>
                         </SwiperSlide>
                         ))}

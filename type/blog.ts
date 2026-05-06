@@ -7,4 +7,5 @@ type BlogItem = {
     publishedAt:string
     layout:string,
     slug:string,
+    collageimg:string,
 }

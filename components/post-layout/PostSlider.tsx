@@ -29,21 +29,6 @@ export default function PostSlider({ blog }: BlogProps) {
                                     <li className="inline-block relative pe-2.5">{blog.publishedAt}</li>
                                     <li className="inline-block relative ps-3.75 before:content-['/'] before:absolute before:h-full before:top-0 before:left-0">By {blog.author}</li>
                                 </ul>
-                                <div className="blog-slideshow swiper">
-                                    <div className="swiper-wrapper">
-                                        <div className="swiper-slide">
-                                            <Image  src={IMAGES.blogimg4} alt="pic1" width="1600" height="960" className="size-full object-cover" />
-                                        </div>
-                                        <div className="swiper-slide">
-                                            <Image  src={IMAGES.blogimg5} alt="pic2" width="1600" height="960" className="size-full object-cover" />
-                                        </div>
-                                        <div className="swiper-slide">
-                                            <Image  src={IMAGES.blogimg6} alt="pic3" width="1600" height="960" className="size-full object-cover" />
-                                        </div>
-                                    </div>
-                                    <div className="swiper-pagination-two absolute bottom-2.5 z-1 left-0 right-0 text-center"></div>
-                                </div>
-                                <div className="blog-slideshow relative">
                                 <Swiper
                                     modules={[Autoplay, Pagination]}
                                     loop={true}
@@ -58,7 +43,7 @@ export default function PostSlider({ blog }: BlogProps) {
                                     el: ".swiper-pagination-two",
                                     clickable: true,
                                     }}
-                                    className="w-full h-full"
+                                    className="w-full h-full blog-slideshow relative"
                                 >
                                     {slides.map((img, index) => (
                                     <SwiperSlide key={index}>
@@ -72,8 +57,8 @@ export default function PostSlider({ blog }: BlogProps) {
                                         </div>
                                     </SwiperSlide>
                                     ))}
+                                    <div className="swiper-pagination-two absolute bottom-2.5 z-1 left-0 right-0 text-center"></div>
                                 </Swiper>
-                                </div>
                             </div>
                         </div>
                         <div className="mb-5">

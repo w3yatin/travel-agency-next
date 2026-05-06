@@ -1,6 +1,16 @@
+"use client";
 import bloggridData from "@/data/bloggrid.json";
 import BlogGridCard from "./cards/BlogGridCard";
+import { useState } from "react";
 export default function BlogSection() {
+    
+  const [visibleCount, setVisibleCount] = useState(8);
+
+  
+  const loadMore = () => {
+    setVisibleCount((prev) => prev + 4); 
+  };
+
     return(
         <section className="xl:py-42.5 py-20">
             <div className="container">
@@ -12,14 +22,17 @@ export default function BlogSection() {
                     </div>
                     <div className="xl:w-2/3 w-full">
                         <div className="grid grid-cols-12 gap-5">
-                            {bloggridData.slice(0,8).map((bloggrid, index) => (
+                            {bloggridData.slice(0, visibleCount).map((bloggrid, index) => (
                                 <div className="md:col-span-6 col-span-12" key={index}>
                                 <BlogGridCard bloggrid={bloggrid} key={index} />
                                 </div>
                             ))}
                         </div>
+                        {visibleCount < bloggridData.length && (
                         <div className="w-full text-center mt-2.5">
-                            <button type="button" className="btn btn-primary btn-hover group dz-load-more" rel="ajax/blog.html">
+                            <button type="button" 
+                            onClick={loadMore}
+                            className="btn btn-primary btn-hover group dz-load-more" rel="ajax/blog.html">
                                 <span>Load More</span>
                                 <span className="block ms-2.5">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,6 +50,7 @@ export default function BlogSection() {
                                 </span>
                             </button>
                         </div>
+                        )}
                     </div>
                 </div>
             </div>

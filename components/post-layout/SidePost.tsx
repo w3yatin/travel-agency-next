@@ -10,8 +10,8 @@ export default function SidePost({ blog }: BlogProps) {
     return(
         <section className="xl:pb-42.5 pb-20 xl:pt-42.5 pt-20">
             <div className="container-full">
-                <div className="row">
-                    <div className="xl:w-1/2 w-full">
+                <div className="row !m-0">
+                    <div className="xl:w-1/2 w-full !p-0">
                         <div className="sticky top-0">
                             <Image src={IMAGES.blogimg7} alt="img" className="size-full object-cover xl:max-h-full md:max-h-125 max-h-100" />
                         </div>

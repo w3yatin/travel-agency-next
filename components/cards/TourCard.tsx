@@ -24,7 +24,7 @@ const TourCard: React.FC<TourCardProps> = ({ tour }) => {
             onMouseLeave={() => setActive(false)}
             onMouseMove={handleMove} >
                 <div className="relative overflow-hidden rounded-xxl before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60">
-                    <Image src={tour.image} alt="tour" placeholder="blur" blurDataURL="/images/blur.png" className="size-full object-cover" height={399} width={588} />
+                    <Image src={tour.image} alt="tour" placeholder="blur" blurDataURL="/images/blur.png" className="size-full object-cover max-w-[420px]" height={615} width={420} />
                 </div>
                 <div className="absolute left-0 bottom-0 sm:p-7.5 p-4.5 flex items-center justify-between w-full">
                     <div className="flex-1">
