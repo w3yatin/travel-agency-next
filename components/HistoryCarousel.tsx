@@ -164,7 +164,7 @@ export default function HistoryCarousel() {
                             <h4 className="text-2xxl mb-3.75">The Beginning</h4>
                             <p className="sm:text-lg/6 text-sm item-des"> Our story began in a small co-working space with a big dream: to revolutionize the creative landscape. Armed with passion and fresh ideas, we launched our first campaign, earning our first major client within months. </p>
                             <div className="sm:pt-9.25 pt-5 pb-5">
-                                  <Link href="/team-2" className="btn btn-primary btn-hover">
+                                  <Link href="/team2" className="btn btn-primary btn-hover">
                                   <span>Join our team</span>
                               </Link>
                             </div>
@@ -192,7 +192,7 @@ export default function HistoryCarousel() {
                                 campaign,
                                 earning our first major client within months. </p>
                             <div className="sm:pt-9.25 pt-5 pb-5">
-                                  <Link href="/team-2" className="btn btn-primary btn-hover">
+                                  <Link href="/team2" className="btn btn-primary btn-hover">
                                   <span>Join our team</span>
                               </Link>
                             </div>
@@ -220,7 +220,7 @@ export default function HistoryCarousel() {
                                 campaign,
                                 earning our first major client within months. </p>
                                 <div className="sm:pt-9.25 pt-5 pb-5">
-                                      <Link href="/team-2" className="btn btn-primary btn-hover">
+                                      <Link href="/team2" className="btn btn-primary btn-hover">
                                   <span>Join our team</span>
                               </Link>
                                 </div>
@@ -248,7 +248,7 @@ export default function HistoryCarousel() {
                                 campaign,
                                 earning our first major client within months. </p>
                             <div className="sm:pt-9.25 pt-5 pb-5">
-                                  <Link href="/team-2" className="btn btn-primary btn-hover">
+                                  <Link href="/team2" className="btn btn-primary btn-hover">
                                    <span>Join our team</span>
                                </Link>
                             </div>
@@ -276,7 +276,7 @@ export default function HistoryCarousel() {
                                 campaign,
                                 earning our first major client within months. </p>
                             <div className="sm:pt-9.25 pt-5 pb-5">
-                                  <Link href="/team-2" className="btn btn-primary btn-hover">
+                                  <Link href="/team2" className="btn btn-primary btn-hover">
                                   <span>Join our team</span>
                               </Link>
                             </div>
@@ -304,7 +304,7 @@ export default function HistoryCarousel() {
                                 campaign,
                                 earning our first major client within months. </p>
                             <div className="sm:pt-9.25 pt-5 pb-5">
-                                  <Link href="/team-2" className="btn btn-primary btn-hover">
+                                  <Link href="/team2" className="btn btn-primary btn-hover">
                                   <span>Join our team</span>
                               </Link>
                             </div>
