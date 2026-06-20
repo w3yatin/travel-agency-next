@@ -20,12 +20,6 @@ export default function ImageBox2() {
 
       gsap.registerPlugin(ScrollTrigger);
 
-      gsap.from(".animate-box", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-      });
 
       if (imgZoomRef.current && imgBoxRef.current) {
         ctx = gsap.context(() => {
