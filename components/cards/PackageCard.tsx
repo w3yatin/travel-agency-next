@@ -27,7 +27,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg, bgClass = "bg-white" }) 
                 </ul>
 
                 <h3 className="xl:text-2xl text-xl uppercase mb-2.5">
-                    <Link href={`/pkg/${pkg.slug}`} className="link-hover">{pkg.title}</Link>
+                    <Link href={`/tour/${pkg.slug}`} className="link-hover">{pkg.title}</Link>
                 </h3>
                 <div className="flex items-center gap-1.5 mb-2.5">
                     <ul className="flex items-center gap-0.75">
@@ -68,7 +68,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg, bgClass = "bg-white" }) 
                     {pkg.oldPrice}
                     </del>
                 </h4>
-                    <Link href={`/pkg/${pkg.slug}`} className="size-12.5 flex items-center justify-center rounded-full bg-primary">
+                    <Link href={`/tour/${pkg.slug}`} className="size-12.5 flex items-center justify-center rounded-full bg-primary">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M5 12H19" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         <path d="M12 5L19 12L12 19" stroke="black" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
