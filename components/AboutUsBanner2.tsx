@@ -2,7 +2,11 @@ import { IMAGES } from "@/utilities/Constants";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AboutUsBanner2({setOpen}:any) {
+interface AboutUsBanner2Props {
+  setOpen: (open: boolean) => void;
+}
+
+export default function AboutUsBanner2({ setOpen }: AboutUsBanner2Props) {
     return(
         <div className="main-banner overflow-hidden pt-32.5 pb-12.5 z-0">
             <div className="container">

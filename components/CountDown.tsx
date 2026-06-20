@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 interface TimeLeft {
   days: number;
@@ -14,36 +14,31 @@ interface CountdownProps {
 
 const padZero = (num: number) => (num < 10 ? `0${num}` : num);
 
-export default function Countdown({ targetDate }: CountdownProps) {
-  const calculateTimeLeft = (): TimeLeft => {
-    const target = new Date(targetDate).getTime();
-    const now = new Date().getTime();
-    const difference = target - now;
+function calculateTimeLeft(targetDate: string | Date): TimeLeft {
+  const target = new Date(targetDate).getTime();
+  const now = new Date().getTime();
+  const difference = target - now;
 
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
+  if (difference <= 0) {
+    return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  }
 
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / 1000 / 60) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
   };
+}
 
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+export default function Countdown({ targetDate }: CountdownProps) {
+  const initialTimeLeft = useMemo(() => calculateTimeLeft(targetDate), [targetDate]);
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(initialTimeLeft);
 
   useEffect(() => {
-    setTimeLeft(calculateTimeLeft());
-
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
 
     return () => clearInterval(timer);

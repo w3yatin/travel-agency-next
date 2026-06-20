@@ -20,8 +20,8 @@ export default function CornerPost({ blog }: BlogProps) {
                                 <li className="inline-block relative ps-3.75 before:content-['/'] before:absolute before:h-full before:top-0 before:left-0">By {blog.author}</li>
                             </ul>
                             <Image  src={blog.image} alt="img"  blurDataURL="/images/blur.png" className="h-full object-cover sm:float-left mt-1.25 mr-6.25 max-sm:mb-6.25 sm:w-1/2 w-full mb-2.5" height={467} width={525}/>
-                            <p className="xl:text-xl sm:text-lg text-sm font-light sm:mb-7.5 mb-3.75">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                            <p className="xl:text-xl sm:text-lg text-sm font-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p className="xl:text-xl sm:text-lg text-sm font-light sm:mb-7.5 mb-3.75">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <p className="xl:text-xl sm:text-lg text-sm font-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                         </div>
                         <div className="mb-5">
                                 <div className="lg:mb-15 mb-7.5">

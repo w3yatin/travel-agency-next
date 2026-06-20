@@ -5,9 +5,10 @@ import dynamic from "next/dynamic";
 const Link = dynamic(() => import("next/link"), { ssr: false });
 
 export default function ServiceSideBar() {
-     const [active, setActive] = useState("#creativedesign");
+     const [active, setActive] = useState("#creativedesign"); // eslint-disable-line @typescript-eslint/no-unused-vars
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let ctx: any;
 
     const loadGSAP = async () => {
@@ -56,8 +57,8 @@ export default function ServiceSideBar() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const handleClick = (e: any) => {
-      const target = e.target.closest("a[href^='#']");
+    const handleClick = (e: MouseEvent) => {
+      const target = (e.target as Element)?.closest("a[href^='#']");
       if (!target) return;
 
       e.preventDefault();

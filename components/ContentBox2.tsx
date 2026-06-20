@@ -37,7 +37,7 @@ export default function ContentBox2() {
                 <div className="flex flex-wrap items-center services-wrapper" ref={wrapperRef}>
                     <div className="service-card active">
                         <div className="relative service-img after:absolute after:inset-0 after:bg-black/60 after:duration-500 lg:h-200 sm:h-125 h-90">
-                            <Image src={IMAGES.service1} alt="/" placeholder="blur" className="object-cover size-full" />
+                            <Image src={IMAGES.service1} alt="Our mission" placeholder="blur" className="object-cover size-full" />
                         </div>
                         <div className="absolute top-1/2 left-0 -translate-x-full -translate-y-1/2 sm:w-134.5 w-75 max-w-full duration-500 content">
                             <h3 className="lg:text-8xl sm:text-7xl text-6xl sm:mb-8.75 mb-5 text-white uppercase font-semibold">Mission</h3>
@@ -50,7 +50,7 @@ export default function ContentBox2() {
                     </div>
                     <div className="service-card">
                         <div className="relative service-img after:absolute after:inset-0 after:bg-black/60 after:duration-500 lg:h-200 sm:h-125 h-90">
-                            <Image src={IMAGES.service2} alt="/" placeholder="blur" className="object-cover size-full" />
+                            <Image src={IMAGES.service2} alt="Our vision" placeholder="blur" className="object-cover size-full" />
                         </div>
                         <div className="absolute top-1/2 left-0 -translate-x-full -translate-y-1/2 sm:w-134.5 w-75 max-w-full duration-500 content">
                             <h3 className="lg:text-8xl sm:text-7xl text-6xl sm:mb-8.75 mb-5 text-white">Vision</h3>

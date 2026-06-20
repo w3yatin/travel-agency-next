@@ -1,24 +1,23 @@
 import Link from "next/link";
 import BlogDetailSection from "../BlogDetailSection";
-import BlogSideBar from "../BlogSideBar";
 import RelatedArticles from "../RealtedArticles";
 
 type BlogProps = {
-    blog: BlogItem;
+  blog: BlogItem;
 };
 
 export default function HeaderImage({ blog }: BlogProps) {
     return(
         <>
         <div className="p-0">
-            <div className="xl:min-h-175 md:min-h-150 min-h-120 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-linear-to-t before:from-black/70 before:to-black/0" style={{backgroundImage:`url(/images/banner/bnr2.png)`}}>
+            <div className="xl:min-h-175 md:min-h-150 min-h-120 text-center relative bg-no-repeat bg-center bg-cover before:absolute before:inset-0 before:bg-linear-to-t before:from-black/70 before:to-black-0" style={{backgroundImage:`url(/images/banner/bnr2.png)`}}>
                 <div className="relative z-1 table h-full max-w-231">
                     <div className="sm:px-20 px-5 sm:py-15 py-10 table-cell align-bottom xl:h-175 md:h-150 h-120 text-start">
                         <ul className="md:text-2xl sm:text-xl text-lg font-medium uppercase mt-auto sm:mb-5 mb-2.5 text-white">
-                            <li className="inline-block relative pe-2.5">15 May 2025</li>
-                            <li className="inline-block relative ps-3.75 before:content-['/'] before:absolute before:h-full before:top-0 before:left-0">By Liam Anderson</li>
+                            <li className="inline-block relative pe-2.5">{blog.publishedAt}</li>
+                            <li className="inline-block relative ps-3.75 before:content-['/'] before:absolute before:h-full before:top-0 before:left-0">By {blog.author}</li>
                         </ul>
-                        <h1 className="lg:text-8xl sm:text-6xl text-4xl text-white">Adventures Around the World That Inspire</h1>
+                        <h1 className="lg:text-8xl sm:text-6xl text-4xl text-white">{blog.title}</h1>
                     </div>
                 </div>
             </div>

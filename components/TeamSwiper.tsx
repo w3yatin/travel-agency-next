@@ -22,13 +22,13 @@ export default function TeamSwiper() {
         },
     ];
     return(
-        <div className="xl:mb-25 mb-40">
-            <h5 className="text-2xl dark:text-white font-semibold mb-8">Tools & Technology</h5>
+        <div className="mb-10 mt-10">
+            <h5 className="text-2xl font-semibold mb-8">Tools & Technology</h5>
             <Swiper
                 modules={[Autoplay]}
                 loop={true}
                 slidesPerView={4}
-                spaceBetween={30}
+                spaceBetween={20}
                 autoplay={{
                     delay: 0,
                     disableOnInteraction: false,
@@ -43,7 +43,7 @@ export default function TeamSwiper() {
                 >
                 {[...techTools, ...techTools].map((item, index) => (
                     <SwiperSlide key={index} className="">
-                    <div className="py-8 mx-auto text-center dark:bg-white/10 bg-black/10">
+                    <div className="py-8 mx-auto text-center bg-black/10">
                         <Image
                         loading="lazy"
                         src={item.img}
@@ -52,7 +52,7 @@ export default function TeamSwiper() {
                         height={60}
                         width={60}
                         />
-                        <span className="dark:text-white">{item.title}</span>
+                        <span className="">{item.title}</span>
                     </div>
                     </SwiperSlide>
                 ))}

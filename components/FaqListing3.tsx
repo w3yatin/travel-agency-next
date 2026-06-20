@@ -13,7 +13,7 @@ export default function FaqListing3() {
             ref ? `${ref.scrollHeight}px` : "0px"
         );
         setContentHeights(heights);
-    }, [faqData]);
+    }, []);
 
     const toggleAccordion = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);

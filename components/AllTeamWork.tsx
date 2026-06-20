@@ -7,6 +7,7 @@ import { useEffect } from "react";
 
 export default function AllTeamWork() {
      useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let ctx: any;
 
     const initGSAP = async () => {

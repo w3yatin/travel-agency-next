@@ -1,4 +1,3 @@
-import Image from "next/image";
 import BlogDetailSection from "../BlogDetailSection";
 import BlogSideBar from "../BlogSideBar";
 

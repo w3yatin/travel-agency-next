@@ -11,6 +11,7 @@ export default function ImageZoom() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let ctx: any;
 
     const loadGSAP = async () => {
@@ -54,7 +55,7 @@ export default function ImageZoom() {
             <div className="w-full text-center">
 				<div className="overflow-hidden relative">
                     <div className="img-box" ref={imgBoxRef}>
-                        <Image src={IMAGES.aboutlarge2} alt="/" placeholder="blur" className="size-full min-h-75 object-cover" />
+                        <Image src={IMAGES.aboutlarge2} alt="Image zoom view" placeholder="blur" className="size-full min-h-75 object-cover" />
                     </div>
                 </div>
             </div>

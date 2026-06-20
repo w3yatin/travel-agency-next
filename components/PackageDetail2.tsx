@@ -24,7 +24,7 @@ export default function PackageDetail2({ pkg }: PackageProps) {
             ref ? `${ref.scrollHeight}px` : "0px"
         );
         setContentHeights(heights);
-    }, [faqData]);
+    }, []);
 
     const toggleAccordion = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index);
@@ -41,7 +41,7 @@ export default function PackageDetail2({ pkg }: PackageProps) {
                                     <span className="md:text-3xl text-2xl text-secondary font-title">$1299</span>
                                     /per person</span>
                                 </h2>
-                                <p className="xl:text-xl sm:text-lg text-sm font-normal lg:mb-10 sm:mb-7.5 mb-4">This is Photoshop's version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliqueenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare. Sed non  mauris vitae erat consequat auctor eu in elit. ClassName aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nuam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim. neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nuam pharetra, erat sed fermentum feugiat neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nuam pharetra, erat sed fermentum feugiat</p>
+                                <p className="xl:text-xl sm:text-lg text-sm font-normal lg:mb-10 sm:mb-7.5 mb-4">This is Photoshop&apos;s version of Lorem Ipsum. Proin gravida nibh vel velit auctor aliqueenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare. Sed non  mauris vitae erat consequat auctor eu in elit. ClassName aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nuam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim. neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nuam pharetra, erat sed fermentum feugiat neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nuam pharetra, erat sed fermentum feugiat</p>
                                 <p className="xl:text-xl sm:text-lg text-sm font-normal lg:mb-10 sm:mb-7.5 mb-4">Bibendum in aliquam consectetur aenean tincidunt arcu nisi nibh diam. Sapien cras bibendum gravida tempus lobortis urna elit orci. Vivamus velit consectetur erat at id tristique. Erat hac morbi sagittis facilisis purus nunc id.Bibendum in aliquam consectetur aenean tincidunt arcu nisi nibh diam. Sapien cras bibendum gravida tempus lobortis urna elit orci. Vivamus velit consectetur erat at id tristique. Erat hac morbi sagittis facilisis purus nunc id.Bibendum in aliquam consectetur aenean tincidunt arcu nisi nibh diam. Sapien cras bibendum gravida tempus lobortis urna elit orci. Vivamus velit consectetu.</p>
                                 <p className="xl:text-xl sm:text-lg text-sm font-normal lg:mb-10 sm:mb-7.5 mb-4">Bibendum in aliquam consectetur aenean tincidunt arcu nisi nibh diam. Sapien cras bibendum gravida tempus lobortis urna elit orci. Vivamus velit consectetur erat at id tristique. Erat hac morbi sagittis facilisis purus nunc id.Bibendum in aliquam consectetur aenean tincidunt arcu nisi nibh diam. Sapien cras bibendum gravida tempus lobortis urna elit orci. Vivamus velit consectetur erat at id tristique. Erat hac morbi sagittis facilisis purus nunc id.Bibendum in aliquam consectetur aenean tincidunt arcu nisi nibh</p>
                             </div>
@@ -55,7 +55,7 @@ export default function PackageDetail2({ pkg }: PackageProps) {
                                         </div>
                                         <div className="flex items-center gap-2.5 mb-3.75">
                                             <div className="min-w-13.75">
-                                                <Image src={IMAGES.icon1} alt="/" />
+                                                <Image src={IMAGES.icon1} alt="Couples purpose icon" />
                                             </div>
                                             <div className="flex-1">
                                                 <h4 className="text-xl font-medium font-base">Couples</h4>
@@ -64,7 +64,7 @@ export default function PackageDetail2({ pkg }: PackageProps) {
                                         </div>
                                         <div className="flex items-center gap-2.5 mb-3.75">
                                             <div className="min-w-13.75">
-                                                <Image src={IMAGES.icon2} alt="/" />
+                                                <Image src={IMAGES.icon2} alt="Family purpose icon" />
                                             </div>
                                             <div className="flex-1">
                                                 <h4 className="text-xl font-medium font-base">Family</h4>
@@ -73,7 +73,7 @@ export default function PackageDetail2({ pkg }: PackageProps) {
                                         </div>
                                         <div className="flex items-center gap-2.5 mb-3.75">
                                             <div className="min-w-13.75">
-                                                <Image src={IMAGES.icon3} alt="/" />
+                                                <Image src={IMAGES.icon3} alt="Single purpose icon" />
                                             </div>
                                             <div className="flex-1">
                                                 <h4 className="text-xl font-medium font-base">Single</h4>

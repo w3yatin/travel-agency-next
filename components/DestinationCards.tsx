@@ -67,7 +67,7 @@ export default function DestinationCards() {
                                     }`}
                                     >
                                 <div className="relative overflow-hidden rounded-xxl before:absolute before:inset-0 before:bg-linear-to-b before:from-transparent before:to-black/60">
-                                    <Image src={item.image} alt="/" placeholder="blur" className="size-full object-cover" />
+                                    <Image src={item.image} alt={item.title} placeholder="blur" className="size-full object-cover" />
                                 </div>
 
                                 <div className="absolute left-0 bottom-0 sm:p-7.5 p-4.5 flex items-center justify-between w-full">

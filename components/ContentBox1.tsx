@@ -10,7 +10,7 @@ export default function ContentBox1() {
 
   useEffect(() => {
     const handleScroll = () => {
-      sectionsRef.current.forEach((section, index) => {
+      sectionsRef.current.forEach((section) => {
         if (!section) return;
 
         const rect = section.getBoundingClientRect();

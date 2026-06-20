@@ -52,7 +52,7 @@ export default function PackageDetail1() {
             </div>
             <div className="container-full">
                 <div className="relative overflow-hidden">
-                    <Image src={IMAGES.tourdetail1} alt="/" className="size-full min-h-75 object-cover" data-speed="0.7" />
+                    <Image src={IMAGES.tourdetail1} alt="Tour destination video thumbnail" className="size-full min-h-75 object-cover" data-speed="0.7" />
                     <div className="absolute md:top-12.5 top-5 lg:left-17.5 md:left-10 left-5">
                         <button data-type="youtube"  onClick={() => setOpen(true)} type="button" className="lg:size-32.5 md:size-25 size-15 flex items-center justify-center rounded-full text-white bg-black/20 cursor-pointer">
                             <svg className="max-md:size-5" width="31" height="39" viewBox="0 0 31 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ export default function PackageDetail1() {
                         <div className="rounded-2xl bg-[#EEEEEE] sm:px-8.75 sm:py-11.25 px-5.75 py-8.25">
                             <div className="mb-7.5">
                                 <h3 className="lg:text-3xl text-2xl font-normal mb-5">Valencia</h3>
-                                <p className="sm:text-lg text-2sm">Valencia is a vibrant coastal city known for its arts, architecture, beaches, and delicious cuisine." Would you like a more poetic, travel-themed, or professional version</p>
+                                <p className="sm:text-lg text-2sm">Valencia is a vibrant coastal city known for its arts, architecture, beaches, and delicious cuisine.&quot; Would you like a more poetic, travel-themed, or professional version</p>
                             </div>
                             <ul>
                                 <li className="relative p-1.25 ps-9.5 xl:text-lg text-sm font-normal text-secondary/90 before:absolute before:left-0 before:bg-no-repeat before:size-7 before:bg-check before:top-1"><strong className="font-medium">Free Time & Shopping</strong> - Allowing leisure time for self-exploration or local shopping.</li>

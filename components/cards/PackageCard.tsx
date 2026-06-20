@@ -64,7 +64,7 @@ const PackageCard: React.FC<PackageCardProps> = ({ pkg, bgClass = "bg-white" }) 
                 <div className="flex items-center justify-between">
                 <h4 className="text-2xxl">
                     {pkg.price}
-                    <del className="text-base text-black/30 font-normal">
+                    <del className="text-base text-black/30 font-normal ml-1.5">
                     {pkg.oldPrice}
                     </del>
                 </h4>

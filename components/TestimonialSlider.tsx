@@ -1,56 +1,59 @@
 "use client";
 
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Thumbs } from "swiper/modules";
 import { useState } from "react";
+import Image from "next/image";
+
+import type { Swiper as SwiperType } from "swiper";
+
 const testimonials = [
   {
     name: "Olivia Mitchell",
     role: "Student",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    image: "images/testimonial/large/img1.png",
-    thumb: "images/testimonial/img1.png",
+    image: "/images/testimonial/large/img1.png",
+    thumb: "/images/testimonial/img1.png",
   },
   {
     name: "Olivia Mitchell",
     role: "Student",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    image: "images/testimonial/large/img2.png",
-    thumb: "images/testimonial/img2.png",
+    image: "/images/testimonial/large/img2.png",
+    thumb: "/images/testimonial/img2.png",
   },
   {
     name: "Olivia Mitchell",
     role: "Student",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    image: "images/testimonial/large/img3.png",
-    thumb: "images/testimonial/img3.png",
+    image: "/images/testimonial/large/img3.png",
+    thumb: "/images/testimonial/img3.png",
   },
   {
     name: "Olivia Mitchell",
     role: "Student",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    image: "images/testimonial/large/img1.png",
-    thumb: "images/testimonial/img1.png",
+    image: "/images/testimonial/large/img1.png",
+    thumb: "/images/testimonial/img1.png",
   },
   {
     name: "Olivia Mitchell",
     role: "Student",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    image: "images/testimonial/large/img2.png",
-    thumb: "images/testimonial/img2.png",
+    image: "/images/testimonial/large/img2.png",
+    thumb: "/images/testimonial/img2.png",
   },
   {
     name: "Olivia Mitchell",
     role: "Student",
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    image: "images/testimonial/large/img3.png",
-    thumb: "images/testimonial/img3.png",
+    image: "/images/testimonial/large/img3.png",
+    thumb: "/images/testimonial/img3.png",
   },
 ];
 
 export default function TestimonialSwiper() {
-  const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
     return(
          <section className="2xl:py-40 lg:py-30 sm:py-25 py-18 bg-light relative max-sm:px-4">
@@ -72,7 +75,7 @@ export default function TestimonialSwiper() {
                 <div className="flex items-center justify-between max-lg:flex-col max-lg:gap-5">
 
                   <div className="relative overflow-hidden rounded-full md:border-10 border-4 border-white md:min-w-78.75 md:size-78.75 sm:min-w-60 sm:size-60 min-w-40 size-40">
-                    <img src={item.image} alt="" />
+                    <Image src={item.image} alt={`${item.name} testimonial`} width={315} height={315} className="size-full object-cover" />
                   </div>
 
                   <div className="2xl:ps-16.5 2xl:ms-16.5 lg:ps-10 lg:ms-10 lg:pe-20 max-lg:px-5 max-lg:text-center relative before:absolute before:inset-y-0 before:left-0 before:w-px before:h-full before:bg-black/30 lg:before:block before:hidden">
@@ -122,10 +125,12 @@ export default function TestimonialSwiper() {
             {testimonials.map((item, i) => (
               <SwiperSlide key={i}>
                 <div className="relative overflow-hidden rounded-full size-15.25 min-w-15.25 border-[3px] border-transparent [.swiper-slide-thumb-active_&]:border-[#E6E6E6]">
-                  <img
+                  <Image
                     src={item.thumb}
                     className="size-full object-cover"
-                    alt=""
+                    alt={`${item.name} thumbnail`}
+                    width={61}
+                    height={61}
                   />
                 </div>
               </SwiperSlide>

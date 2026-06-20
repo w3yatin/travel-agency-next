@@ -45,8 +45,8 @@ export default function RelatedArticles() {
                     }}
                     >
                         {bloggridData.map((bloggrid, index) => (
-                            <SwiperSlide>
-                                <BlogGridCard bloggrid={bloggrid} key={index} />
+                            <SwiperSlide key={index}>
+                                <BlogGridCard bloggrid={bloggrid} />
                             </SwiperSlide>
                         ))}
                                

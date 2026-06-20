@@ -37,7 +37,7 @@ export default function AboutUs2() {
                 <iframe
                     width="100%"
                     height="450"
-                    src="https://www.youtube.com/embed/SIjZbiGqafI"
+                    src="https://www.youtube.com/embed/MqV6iXsmHYE"
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

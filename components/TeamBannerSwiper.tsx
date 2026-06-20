@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 const teamImages = [
   '/images/team/large/img1.png',
@@ -24,9 +25,11 @@ export default function TeamBannerSwiper() {
                         key={index}
                         className="relative overflow-hidden lg:rounded-3xl sm:rounded-2xl rounded-xl sm:even:mt-20 even:mt-10 xl:min-w-80 sm:min-w-50 min-w-30"
                     >
-                        <img
+                        <Image
                         src={img}
-                        alt={`team-${index}`}
+                        alt={`Team member ${index + 1}`}
+                        width={320}
+                        height={400}
                         className="size-full object-cover"
                         />
                     </div>

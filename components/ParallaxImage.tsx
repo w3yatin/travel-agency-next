@@ -2,8 +2,10 @@
 import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 
+import type { StaticImageData } from "next/image";
+
 type Props = {
-  src: any;
+  src: string | StaticImageData;
   alt?: string;
   className?: string;
 };
@@ -12,6 +14,7 @@ export default function ParallaxImage({ src, alt = "/", className }: Props) {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let ctx: any;
 
     const loadGSAP = async () => {
@@ -29,7 +32,7 @@ export default function ParallaxImage({ src, alt = "/", className }: Props) {
           if (!cover) return;
 
           gsap.to(cover, {
-          yPercent: -20, // 👈 reverse direction + subtle
+          yPercent: -20, 
           ease: "none",
           scrollTrigger: {
             trigger: card,
@@ -50,7 +53,7 @@ export default function ParallaxImage({ src, alt = "/", className }: Props) {
   return (
     <section ref={sectionRef}>
       <div className="container-full">
-        <div className="card relative overflow-hidden h-[900px]">
+        <div className="card relative overflow-hidden">
           <figure className="card-cover-container">
             <Image
               src={src}

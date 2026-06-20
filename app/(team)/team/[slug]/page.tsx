@@ -21,23 +21,23 @@ export default async function Page({
   
     return (
         <>
-            <section className="relative z-10">
+            <section className="relative z-10 max-lg:mt-25 max-sm:mt-18">
                 <div className="container">
                     <div className="grid grid-cols-12">
-                        <div className="xl:col-span-6 col-span-12 xl:mr-20 max-xl:mb-3 mb-12">
+                        <div className="lg:col-span-6 col-span-12 xl:mr-20 lg:mr-10 max-xl:mb-3 mb-12 ">
                             <div className="sticky !top-30">
                                 <Image loading="lazy" className="size-full rounded-xl" src={team.img} alt={team.name} height={560} width={662} />
                             </div>
                         </div>
-                        <div className="xl:col-span-6 col-span-12">
-                            <div className="pxl-heading-scroll-effect">
-                                <h2 className="xxl:text-7xl/75 md:text-6xl/70 sm:text-4.5xl text-3xl font-semibold text-secondary capitalize heading-text">
+                        <div className="lg:col-span-6 col-span-12">
+                            <div className="pxl-heading-scroll-effect lg:mt-30 sm:mt-10 mt-5">
+                                <h2 className="xxl:text-7xl/20 md:text-6xl/18 sm:text-4.5xl text-3xl mb-5 font-semibold text-secondary capitalize heading-text">
                                    {team.name}
                                 </h2>
-                                <span className="text-textlight  text-lg">{team.position}</span>
+                                <span className="text-heading font-medium text-lg">{team.position}</span>
                                 <p className="text-lg/8 item-des mt-2">{team.description}</p>
-                                <div className="xl:mt-5">
-                                    <span className="text-base  font-medium uppercase">FOLLOW ME</span>
+                                <div className="mt-5">
+                                    <span className="text-base text-heading font-medium uppercase mb-4 mt-2 block">FOLLOW ME</span>
                                     <div className="flex items-center text-sm  gap-8">
                                         <Link href="https://www.linkedin.com/showcase/dexignzone/" target="_blank"><i className="fa-brands fa-linkedin-in"></i></Link>
                                         <Link href="https://x.com/dexignzones" target="_blank"><i className="fa-brands fa-x-twitter"></i></Link>
@@ -47,7 +47,7 @@ export default async function Page({
                                     </div>
                                 </div>
                             </div>
-                            <div className="xl:my-10 my-40">
+                            <div className="xl:my-10 my-10">
                                 <h5 className="text-2xl  font-semibold mb-7">Experience</h5>
                                 <ul className="">
                                     <li className="flex items-center gap-x-15 mb-3">
@@ -64,9 +64,9 @@ export default async function Page({
                                     </li>
                                 </ul>
                             </div>
-                            <div className="xl:mb-6 mb-40">
-                                <h5 className="text-2xl  font-semibold mb-8">Awards</h5>
-                                <div className="grid grid-cols-12 gap-15">
+                            <div className="xl:mb-8 mb-6">
+                                <h5 className="text-2xl font-semibold mb-8">Awards</h5>
+                                <div className="grid grid-cols-12 gap-4">
                                     <div className="md:col-span-6 col-span-12">
                                         <div className="p-10 bg-black/10 text-center group hover:bg-primary duration-500">
                                             <ul className="flex items-center justify-center text-base font-medium  group-hover:text-black   text-center duration-500">
@@ -107,9 +107,9 @@ export default async function Page({
                                 </div>
                             </div>
                             <TeamSwiper />
-                            <div className="grid grid-cols-12 gap-5 xl:mb-20 mb-40">
+                            <div className="grid grid-cols-12 gap-5 xl:mb-20 mb-15">
                                 <div className="col-span-12">
-                                    <div className="flex justify-between mb-8 items-center">
+                                    <div className="flex justify-between mb-5 items-center">
                                         <h5 className="text-2xl  font-semibold">Work</h5>
                                        
                                          <Link className="btn btn-primary btn-hover" href="/">
@@ -174,22 +174,22 @@ export default async function Page({
                                     </div>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-12 xl:mb-30 mb-40">
+                            <div className="grid grid-cols-12 xl:mb-7.5 mb-10">
                                 <div className="col-span-12"><h5 className="text-2xl  font-semibold mb-8">Contact Us</h5></div>
                                 <div className="col-span-12">
                                     <form>
-                                        <div className="grid grid-cols-12 gap-x-16">
+                                        <div className="grid grid-cols-12 gap-x-4">
                                             <div className="lg:col-span-6 col-span-12">
                                                 <label htmlFor="fullname" className="block text-label font-normal mb-3  text-black">Full name*</label>
-                                                <input id="fullname" className="w-full h-12 mr-16 mb-6 py-4 px-5 outline-none bg-black/10 text-base font-medium  text-black" type="text" name="dzName" placeholder="John carter" />
+                                                <input id="fullname" className="w-full h-12 mb-6 py-4 px-5 outline-none bg-black/10 text-base font-medium  text-black" type="text" name="dzName" placeholder="John carter" />
                                             </div>
                                             <div className="lg:col-span-6 col-span-12">
                                                 <label htmlFor="email" className="block text-label font-normal mb-3  text-black">Email address*</label>
-                                                <input id="email" className="w-full h-12 mr-16 mb-6 py-4 px-5 outline-none bg-black/10 text-base font-medium  text-black" type="email" name="dzEmail" placeholder="info@example.com" />
+                                                <input id="email" className="w-full h-12 mb-6 py-4 px-5 outline-none bg-black/10 text-base font-medium  text-black" type="email" name="dzEmail" placeholder="info@example.com" />
                                             </div>
                                             <div className="col-span-12">
                                                 <label htmlFor="website" className="block text-label font-normal mb-3  text-black">Website link</label>
-                                                <input id="website" className="w-full h-12 mr-16 mb-6 py-4 px-5 outline-none bg-black/10 text-base font-medium  text-black" type="text" name="link" placeholder="https://www.com" />
+                                                <input id="website" className="w-full h-12 mb-6 py-4 px-5 outline-none bg-black/10 text-base font-medium  text-black" type="text" name="link" placeholder="https://www.com" />
                                             </div>
                                             <div className="col-span-12">
                                                 <label htmlFor="help" className="block text-label font-normal mb-3  text-black">How Can We Help You*</label>

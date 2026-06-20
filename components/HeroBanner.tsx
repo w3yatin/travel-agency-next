@@ -3,7 +3,11 @@ import { IMAGES } from "@/utilities/Constants";
 import Image from "next/image";
 import { useEffect } from "react";
 
-export default function HeroBanner({setOpen}:any) {
+interface HeroBannerProps {
+  setOpen: (open: boolean) => void;
+}
+
+export default function HeroBanner({ setOpen }: HeroBannerProps) {
     useEffect(() => {
   const trigger = document.querySelector(".scroll-down-arrow");
   const target = document.querySelector("#nextSection");

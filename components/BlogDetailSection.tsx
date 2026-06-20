@@ -44,8 +44,8 @@ export default function BlogDetailSection() {
             </div>
             <div className="lg:mb-15 mb-7.5">
                 <h4 className="text-3xl mb-5">Conclusion</h4>
-                <p className="xl:text-xl sm:text-lg text-sm font-light sm:mb-7.5 mb-2.5">Design matters because it shapes our environment, influences behavior, and drives progress. The journey from inspiration to execution is not just about creating something beautiful—it's about creating something meaningful.</p>
-                <p className="xl:text-xl sm:text-lg text-sm font-light sm:mb-7.5 mb-2.5">So, whether you're a designer or someone who appreciates design, remember: the magic lies in the process. Every great design starts with a spark and becomes impactful through thoughtful execution.</p>
+                <p className="xl:text-xl sm:text-lg text-sm font-light sm:mb-7.5 mb-2.5">Design matters because it shapes our environment, influences behavior, and drives progress. The journey from inspiration to execution is not just about creating something beautiful—it&apos;s about creating something meaningful.</p>
+                <p className="xl:text-xl sm:text-lg text-sm font-light sm:mb-7.5 mb-2.5">So, whether you&apos;re a designer or someone who appreciates design, remember: the magic lies in the process. Every great design starts with a spark and becomes impactful through thoughtful execution.</p>
                 <span className="text-[19px] text-black/90">What inspires your creativity? Share your thoughts in the comments below!</span>
             </div>
             <div className="mb-7.5">

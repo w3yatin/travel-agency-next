@@ -1,6 +1,5 @@
 "use client";
 import pricingData from "@/data/pricing.json";
-import Link from "next/link";
 import { useState } from "react";
 
 export default function PricingTable() {

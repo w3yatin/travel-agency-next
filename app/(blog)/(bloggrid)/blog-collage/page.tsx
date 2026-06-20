@@ -16,6 +16,7 @@ const pattern = [
 
 export default function BlogCollage() {
      const masonryRef = useRef<HTMLDivElement>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const isoRef = useRef<any>(null);
   const prevCountRef = useRef(0);
   const [visibleCount, setVisibleCount] = useState(LIMIT);
@@ -24,6 +25,7 @@ export default function BlogCollage() {
   const hasMore = visibleCount < blogData.length;
  
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let isoInstance: any = null;
  
     const initIsotope = async () => {

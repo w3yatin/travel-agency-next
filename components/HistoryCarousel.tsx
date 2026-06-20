@@ -63,7 +63,7 @@ export default function HistoryCarousel() {
         self.to(element, { duration: 3, ease: 'linear' }, 'short');
       },
 
-      onActivate(element, self) {
+      onActivate(element, _self) {
         const slides = gsap.utils.toArray(".pxl-history-carousel .item-slide");
         const thumbContainer = document.querySelector(".pxl-swiper-thumbs");
         const thumbWrapper = document.querySelector(".pxl-thumbs-wrapper");
@@ -447,8 +447,8 @@ function buildCarousel(
         currentActiveElement = targetElements[wrap(Math.round(-value / angleInc))];
         self.render();
         if (prevActive !== currentActiveElement) {
-          onDeactivate && prevActive && onDeactivate(prevActive, self);
-          onActivate && onActivate(currentActiveElement, self);
+          if (onDeactivate && prevActive) { onDeactivate(prevActive, self); }
+          if (onActivate) { onActivate(currentActiveElement, self); }
         }
       }
       return rotation;
@@ -603,9 +603,9 @@ function buildCarousel(
         el.removeEventListener(eventTypes[3], onRelease as EventListener);
       });
       gsap.killTweensOf(self);
-      tempDiv.parentNode && tempDiv.parentNode.removeChild(tempDiv);
-      autoAdvanceCall && autoAdvanceCall.kill();
-      draggableInstance && draggableInstance.kill();
+      if (tempDiv.parentNode) { tempDiv.parentNode.removeChild(tempDiv); }
+      if (autoAdvanceCall) { autoAdvanceCall.kill(); }
+      if (draggableInstance) { draggableInstance.kill(); }
     },
     
     autoAdvance: autoAdvanceCall || null,
@@ -616,16 +616,16 @@ function buildCarousel(
       if (autoAdvanceCall && typeof autoAdvanceCall === 'object') {
         autoAdvanceCall.restart(true);
       }
-      onClick && onClick(e.currentTarget as Element, self);
+      if (onClick) { onClick(e.currentTarget as Element, self); }
     }
   };
 
   const onPress = (e: Event) => {
     onPressRotation = rotation;
     gsap.set(tempDiv, { rotation: rotation });
-    autoAdvanceCall && autoAdvanceCall.pause();
+    if (autoAdvanceCall) { autoAdvanceCall.pause(); }
     gsap.killTweensOf(self);
-    draggableInstance && draggableInstance.startDrag(e);
+    if (draggableInstance) { draggableInstance.startDrag(e); }
     dragged = false;
   };
 
@@ -634,7 +634,7 @@ function buildCarousel(
       draggableInstance.endDrag(e);
     }
     if (rotation === onPressRotation) {
-      autoAdvanceCall && autoAdvanceCall.restart(true);
+      if (autoAdvanceCall) { autoAdvanceCall.restart(true); }
       if (draggableInstance && draggableInstance.tween) {
         draggableInstance.tween.kill();
       }
@@ -644,7 +644,7 @@ function buildCarousel(
 
   const syncDraggable = () => {
     if (!dragged) {
-      onStart && onStart(currentActiveElement, self);
+      if (onStart) { onStart(currentActiveElement, self); }
       dragged = true;
     }
     if (draggableInstance) {
@@ -684,8 +684,8 @@ function buildCarousel(
       snap: gsap.utils.snap(2 * angleInc),
       inertia: true,
       onThrowComplete: () => {
-        autoAdvanceCall && autoAdvanceCall.restart(true);
-        onStop && onStop(currentActiveElement, self);
+        if (autoAdvanceCall) { autoAdvanceCall.restart(true); }
+        if (onStop) { onStop(currentActiveElement, self); }
       },
       onThrowUpdate: syncDraggable,
       onDrag: syncDraggable,

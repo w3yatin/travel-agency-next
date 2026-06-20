@@ -11,6 +11,7 @@ export default function ImageBox2() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let ctx: any;
 
     const loadGSAP = async () => {
@@ -55,7 +56,7 @@ export default function ImageBox2() {
             </div>
             <div className="overflow-hidden relative">
                 <div className="img-box" ref={imgBoxRef}>
-                    <Image src={IMAGES.aboutlarge4} alt="/" className="size-full min-h-75 object-cover" data-speed="0.7" />
+                    <Image src={IMAGES.aboutlarge4} alt="Featured work showcase" className="size-full min-h-75 object-cover" data-speed="0.7" />
                 </div>
             </div>
         </section>

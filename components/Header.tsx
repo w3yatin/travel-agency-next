@@ -2,8 +2,9 @@
 import { IMAGES } from "@/utilities/Constants";
 import Image from "next/image";
 import Link from "next/link";
-import { useReducer ,useRef , useEffect} from "react";
+import { useReducer , useEffect} from "react";
 import { clsx } from "clsx";
+import { usePathname } from "next/navigation";
 
 interface MenuItem {
   title: string;
@@ -59,7 +60,7 @@ const Menu: MenuItem[] = [
     submenu: [
       {
         title: "Blog Grid",
-        link: "/",
+        link: "/blog",
         submenu: [
           { title: "Blog", link: "/blog" },
           { title: "Blog Column 2", link: "/blog-grid2" },
@@ -71,7 +72,7 @@ const Menu: MenuItem[] = [
       },
       {
         title: "Blog List",
-        link: "/",
+        link: "/blog",
         submenu: [
           { title: "No Sidebar", link: "/blog-list-no-sidebar" },
           { title: "Left Sidebar", link: "/blog-list-left-sidebar" },
@@ -81,7 +82,7 @@ const Menu: MenuItem[] = [
       },
       {
         title: "Post Layout",
-        link: "/",
+        link: "/blog/standard-post",
         submenu: [
           { title: "Standard Post", link: "/blog/standard-post" },
           { title: "Status Slider", link: "/blog/status-slider" },
@@ -111,21 +112,34 @@ const Menu: MenuItem[] = [
 	},
 ];
 
-// 🔹 Reducer
-const initialState = {
+
+const initialState: HeaderState = {
   menuOpen: false,
   searchOpen: false,
   isSticky: false,
-  indicatorStyle: {
-    width: 0,
-    left: 0,
-  },
+  openSubmenus: [],
 };
 
-function reducer(state: any, action: any) {
+interface HeaderState {
+  menuOpen: boolean;
+  searchOpen: boolean;
+  isSticky: boolean;
+  openSubmenus: string[];
+}
+
+type HeaderAction =
+  | { type: "TOGGLE_MENU" }
+  | { type: "SET_SEARCH"; payload: boolean }
+  | { type: "SET_STICKY"; payload: boolean }
+  | { type: "SET_MENU"; payload: boolean }
+  | { type: "TOGGLE_SUBMENU"; payload: string };
+
+function reducer(state: HeaderState, action: HeaderAction): HeaderState {
   switch (action.type) {
-    case "TOGGLE_MENU":
-      return { ...state, menuOpen: !state.menuOpen };
+    case "TOGGLE_MENU": {
+      const menuOpen = !state.menuOpen;
+      return { ...state, menuOpen, openSubmenus: menuOpen ? state.openSubmenus : [] };
+    }
 
     case "SET_SEARCH":
       return { ...state, searchOpen: action.payload };
@@ -133,28 +147,50 @@ function reducer(state: any, action: any) {
     case "SET_STICKY":
       return { ...state, isSticky: action.payload };
 
-    case "SET_INDICATOR":
-      return { ...state, indicatorStyle: action.payload };
-
 	case "SET_MENU":
-  		return { ...state, menuOpen: action.payload };
+  		return {
+			...state,
+			menuOpen: action.payload,
+			openSubmenus: action.payload ? state.openSubmenus : [],
+		};
+
+	case "TOGGLE_SUBMENU": {
+		const key = action.payload;
+		const isOpen = state.openSubmenus.includes(key);
+
+		if (isOpen) {
+			return {
+				...state,
+				openSubmenus: state.openSubmenus.filter(
+					(k) => k !== key && !k.startsWith(`${key}-`)
+				),
+			};
+		}
+
+		const isTopLevel = !key.includes("-");
+
+		if (isTopLevel) {
+			return { ...state, openSubmenus: [key] };
+		}
+
+		const parentKey = key.split("-").slice(0, -1).join("-");
+		const withoutSiblings = state.openSubmenus.filter(
+			(k) => k === parentKey || !k.startsWith(`${parentKey}-`)
+		);
+		return { ...state, openSubmenus: [...withoutSiblings, key] };
+	}
 
     default:
       return state;
   }
 }
 
-type Action =
-  | { type: "TOGGLE_MENU" }
-  | { type: "SET_MENU"; payload: boolean }
-  | { type: "SET_SEARCH"; payload: boolean }
-  | { type: "SET_STICKY"; payload: boolean }
-  | { type: "SET_INDICATOR"; payload: { width: number; left: number } };
-  
-export default function Header() {
-  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const wrapperRef = useRef<HTMLUListElement | null>(null);
+export default function Header() {
+
+	const pathname = usePathname();
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -168,51 +204,17 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const updateIndicator = (el: HTMLElement | null) => {
-    if (!el || !wrapperRef.current) return;
-
-    const rect = el.getBoundingClientRect();
-    const parentRect = wrapperRef.current.getBoundingClientRect();
-
-    dispatch({
-      type: "SET_INDICATOR",
-      payload: {
-        width: rect.width,
-        left: rect.left - parentRect.left,
-      },
-    });
-  };
-
-  const resetIndicator = () => {
-    const activeEl =
-      wrapperRef.current?.querySelector<HTMLElement>(".nav-link.active");
-
-    if (activeEl) {
-      updateIndicator(activeEl);
-    }
-  };
-
-  useEffect(() => {
-    const firstLink =
-      wrapperRef.current?.querySelector<HTMLElement>(".nav-link");
-
-    if (firstLink) {
-      firstLink.classList.add("active");
-      updateIndicator(firstLink);
-    }
-  }, []);
-
-
+  
     return(
         <header
 			className={clsx(
 				"site-header sticky-header-wrapper absolute top-0 left-0 w-full z-999 transition-all duration-300",
 				{
-				"fixed bg-white shadow-md py-4": state.isSticky,
+				"fixed bg-white shadow-md lg:py-4 py-1": state.isSticky,
 				"absolute bg-transparent lg:pt-7.5": !state.isSticky,
 				}
 			)}
-			>
+		>
 				<div className="main-bar relative lg:text-white text-secondary w-full">
 					<div className="container-fluid flex items-center">
 
@@ -253,6 +255,7 @@ export default function Header() {
 							)}
 							></div>
 						<div
+							data-lenis-prevent
 							className={clsx(
 								"flex lg:basis-auto lg:mx-auto max-lg:flex-col lg:justify-center justify-start lg:items-center max-lg:fixed max-lg:h-screen max-lg:px-5 max-lg:top-0 max-lg:-left-75 max-lg:z-9999 max-lg:w-72 max-lg:overflow-auto max-lg:duration-700 header-nav custom-scroll lg:rounded-6xl lg:bg-secondary/40 bg-white p-1.5 [.header-nav.show]:left-0 ",
 								{
@@ -266,116 +269,135 @@ export default function Header() {
 									<Image src={IMAGES.logo} alt="logo" className="object-contain duration-500" />
 								</Link>
 							</div>
-							<ul ref={wrapperRef} onMouseLeave={resetIndicator} className="lg:flex flex-wrap navbar-nav nav-wrapper">
-								<li  className="nav-indicator" style={{
-									width: state.indicatorStyle.width,
-									transform: `translateX(${state.indicatorStyle.left}px)`,
-									}}>
-								</li>
-									{Menu.map((item, i) => (
-									<li
-										key={i}
-										className="lg:inline-block block max-lg:border-b max-lg:border-gray-200 relative group"
-										onMouseEnter={(e) => {
-											const link = e.currentTarget.querySelector(".nav-link");
-											if (link) {
-											link.classList.add("active");
-											updateIndicator(link as HTMLElement);
-											}
-										}}
-										onMouseLeave={(e) => {
-											const link = e.currentTarget.querySelector(".nav-link");
-											if (link) {
-											link.classList.remove("active");
-											}
-										}}
+							<ul className="lg:flex flex-wrap navbar-nav nav-wrapper gap-1">
+								{Menu.map((item, i) => {
+									const isActive =
+									  (pathname === "/" && item.link === "/home")	|| pathname === item.link ||
+										(item.submenu &&
+											item.submenu.some((sub) => pathname.startsWith(sub.link)));
+									const topKey = `${i}`;
+									const isTopOpen = state.openSubmenus.includes(topKey);
+									return(
+										<li
+											key={i}
+											className="lg:inline-block block max-lg:border-b max-lg:border-gray-200 relative group"
 										>
-									<Link
-										href={item.link || "#"}
-										className="lg:py-2.5 py-2 xl:px-4 lg:px-2 relative z-1 lg:inline-block block xl:text-base text-2sm leading-none! font-medium rounded-8xl nav-link"
-										onMouseEnter={(e) => {
-											updateIndicator(e.currentTarget);
-											e.currentTarget.classList.add("active");
-										}}
-										onMouseLeave={(e) => {
-											e.currentTarget.classList.remove("active");
-										}}
+										<Link
+											href={item.link || "#"}
+											className={`lg:py-2.5 py-2 xl:px-4 lg:px-2 max-lg:pr-12 relative z-1 lg:inline-block block xl:text-base text-2sm leading-none! font-medium rounded-8xl nav-link group-hover:bg-white group-hover:text-secondary ${isActive ? "bg-white text-secondary" : ""}`}
 										>
-										<span className="inline-block lg:leading-5 leading-7.5">
-										{item.title}
-										</span>
+											<span className="inline-block lg:leading-5 leading-7.5">
+											{item.title}
+											</span>
+										</Link>
 
 										{item.submenu && (
-										<i className="fas fa-chevron-right lg:hidden! block! size-7 leading-7! text-center text-xs bg-secondary rounded text-white float-end"></i>
-										)}
-									</Link>
-
-									{item.submenu && (
-										<ul  className="lg:absolute bg-white block lg:left-1/2 lg:-translate-x-1/2 lg:py-5 w-60 lg:opacity-0 lg:invisible lg:translate-y-3 z-10 mt-2 text-left duration-300 shadow-lg rounded-md lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0 max-lg:hidden"
-											onMouseEnter={(e) => {
-												const parentLi = e.currentTarget.closest("li");
-												const link = parentLi?.querySelector<HTMLElement>(".nav-link");
-												if (link) updateIndicator(link);
-											}}
-										>
-										
-										{item.submenu.map((child, j) => (
-											<li
-											key={j}
-											className={`relative ${
-												child.submenu ? "group/second sub-menu-down" : ""
-											}`}
-											>
-											<Link
-												href={child.link || "#"}
-												className={`block relative text-sm text-gray-600 font-normal py-1.25 lg:px-7.5 duration-500 hover:text-secondary ${
-												child.submenu
-													? " after:inline-block after:font-black after:text-tiny after:float-right"
-													: ""
-												}`}
-											>
-												{item.title === "Blogs" && (
-													<span className="flex !items-center justify-center size-7 lg:bg-transparent bg-black float-end text-gray-600">
-														<svg
-															xmlns="http://www.w3.org/2000/svg"
-															className="w-3 h-3 transition-transform duration-300"
-															fill="none"
-															viewBox="0 0 24 24"
-															stroke="currentColor"
-															strokeWidth="3"
-														>
-															<path
-															strokeLinecap="round"
-															strokeLinejoin="round"
-															d="M9 5l7 7-7 7"
-															/>
-														</svg>
-													</span>
+											<button
+												type="button"
+												aria-label={`Toggle ${item.title} submenu`}
+												aria-expanded={isTopOpen}
+												onClick={() =>
+													dispatch({ type: "TOGGLE_SUBMENU", payload: topKey })
+												}
+												className={clsx(
+													"fas lg:hidden! flex! items-center justify-center size-7 leading-7! text-center text-xs bg-secondary rounded text-white absolute right-2 top-2 z-2 duration-300 cursor-pointer",
+													{ "fa-chevron-down": isTopOpen },{ "fa-chevron-right": !isTopOpen }
 												)}
-												<span>{child.title}</span>
-											</Link>
+											></button>
+										)}
 
-											{child.submenu && (
-												<ul className="bg-white lg:py-5 lg:w-55 lg:left-full lg:top-0 lg:ml-1 lg:shadow-1 lg:absolute lg:opacity-0 lg:invisible lg:translate-y-2 z-10 mt-0 text-left duration-300 lg:group-hover/second:opacity-100 lg:group-hover/second:visible lg:group-hover/second:translate-y-0 max-lg:hidden">
-												
-												{child.submenu.map((sub, k) => (
-													<li key={k} className="relative">
-													<Link
-														href={sub.link || "#"}
-														className="block relative text-sm text-gray-600 font-normal py-1.25 lg:px-7.5 duration-500 hover:text-secondary nav-link"
+										{item.submenu && (
+											<ul
+												className={clsx(
+													"lg:absolute bg-white lg:block lg:left-1/2 lg:-translate-x-1/2 lg:py-5 w-60 lg:opacity-0 lg:invisible lg:translate-y-3 z-10 lg:mt-2 max-lg:mb-3 text-left duration-300 lg:shadow-lg rounded-md lg:group-hover:opacity-100 lg:group-hover:visible lg:group-hover:translate-y-0 max-lg:overflow-hidden",
+													isTopOpen ? "max-lg:block" : "max-lg:hidden"
+												)}
+											>
+											
+											{item.submenu.map((child, j) => {
+												const childKey = `${topKey}-${j}`;
+												const isChildOpen = state.openSubmenus.includes(childKey);
+												return (
+												<li
+												key={j}
+												className={`relative ${
+													child.submenu ? "group/second sub-menu-down" : ""
+												}`}
+												>
+												<Link
+													href={child.link || "#"}
+													className={`block relative text-sm text-gray-600 font-normal py-1.25 lg:px-7.5 px-7.5 duration-500 hover:text-secondary ${
+													child.submenu
+														? " after:inline-block after:font-black after:text-tiny after:float-right max-lg:pr-9"
+														: ""
+													}`}
+												>
+													{child.submenu && (
+														<span className="lg:flex hidden !items-center justify-center size-7 lg:bg-transparent bg-black float-end text-gray-600">
+															<svg
+																xmlns="http://www.w3.org/2000/svg"
+																className="w-3 h-3 transition-transform duration-300"
+																fill="none"
+																viewBox="0 0 24 24"
+																stroke="currentColor"
+																strokeWidth="3"
+															>
+																<path
+																strokeLinecap="round"
+																strokeLinejoin="round"
+																d="M9 5l7 7-7 7"
+																/>
+															</svg>
+														</span>
+													)}
+													<span>{child.title}</span>
+												</Link>
+
+												{child.submenu && (
+													<>
+													<button
+														type="button"
+														aria-label={`Toggle ${child.title} submenu`}
+														aria-expanded={isChildOpen}
+														onClick={() =>
+															dispatch({ type: "TOGGLE_SUBMENU", payload: childKey })
+														}
+														className={clsx(
+															"lg:hidden! flex! items-center justify-center size-6 absolute right-1.5 top-0.5 text-gray-500 duration-300 cursor-pointer",
+															{ "rotate-90": isChildOpen }
+														)}
 													>
-														<span>{sub.title}</span>
-													</Link>
-													</li>
-												))}
-												</ul>
-											)}
-											</li>
-										))}
-										</ul>
-									)}
-									</li>
-								))}
+														<i className="fas fa-chevron-right text-xs"></i>
+													</button>
+
+													<ul
+														className={clsx(
+															"bg-white lg:py-5 lg:w-55 lg:left-full lg:top-0 lg:ml-1 rounded-md lg:shadow-lg lg:absolute lg:opacity-0 lg:invisible lg:translate-y-2 z-10 mt-0 text-left duration-300 lg:group-hover/second:opacity-100 lg:group-hover/second:visible lg:group-hover/second:translate-y-0 max-lg:overflow-hidden max-lg:pl-3 max-lg:ml-7.5",
+															isChildOpen ? "max-lg:block" : "max-lg:hidden"
+														)}
+													>
+													
+													{child.submenu.map((sub, k) => (
+														<li key={k} className="relative">
+														<Link
+															href={sub.link || "#"}
+															className="block relative text-sm text-gray-600 font-normal py-1.25 lg:px-7.5 duration-500 hover:text-secondary nav-link"
+														>
+															<span>{sub.title}</span>
+														</Link>
+														</li>
+													))}
+													</ul>
+													</>
+												)}
+												</li>
+												);
+											})}
+											</ul>
+										)}
+										</li>
+									);
+								})}
 							</ul>
 							<div className="lg:hidden block max-lg:p-5 text-center mt-auto">
 								<ul>

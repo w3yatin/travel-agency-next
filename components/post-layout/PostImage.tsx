@@ -20,7 +20,7 @@ export default function PostImage({ blog }: BlogProps) {
                                 <li className="inline-block relative ps-3.75 before:content-['/'] before:absolute before:h-full before:top-0 before:left-0">By {blog.author}</li>
                             </ul>
                             <div className="relative overflow-hidden">
-                                <Image src={blog.image} alt="/"  blurDataURL="/images/blur.png" className="size-full object-cover" width={525} height={934}/>
+                                <Image src={blog.image} alt={blog.title}  blurDataURL="/images/blur.png" className="size-full object-cover" width={525} height={934}/>
                             </div>
                         </div>
                         <div className="mb-5">

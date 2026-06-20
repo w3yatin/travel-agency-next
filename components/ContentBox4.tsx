@@ -1,6 +1,5 @@
 import { IMAGES } from "@/utilities/Constants";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function ContentBox4() {
     return(

@@ -14,7 +14,7 @@ export default function BlogCards() {
                     <div className="xl:col-span-8 col-span-12 xl:row-span-2">
                         <div className="relative overflow-hidden before:absolute before:inset-0 before:bg-linear-to-t before:from-black/30 before:to-black/0 before:z-1">
                             <div className="relative overflow-hidden">
-                                <Image src={IMAGES.blogimg1} alt="/" className="size-full object-cover" />
+                                <Image src={IMAGES.blogimg1} alt="Latest blog post cover" className="size-full object-cover" />
                             </div>
                             <div className="absolute bottom-0 left-0 w-full sm:p-10 p-5 z-2">
                                 <div className="flex items-center justify-between">
@@ -35,7 +35,7 @@ export default function BlogCards() {
                     <div className="xl:col-span-4 md:col-span-6 col-span-12">
                         <div className="relative overflow-hidden group before:absolute before:inset-0 before:bg-linear-to-t before:from-black/30 before:to-black/0 before:z-1 xl:before:translate-y-full hover:before:translate-y-0 before:duration-300">
                             <div className="relative overflow-hidden">
-                                <Image src={IMAGES.blogimg2} alt="/" className="size-full object-cover" />
+                                <Image src={IMAGES.blogimg2} alt="Travel tips and guides" className="size-full object-cover" />
                             </div>
                             <div className="absolute bottom-0 left-0 w-full sm:p-7.5 p-5 z-2 xl:translate-y-full group-hover:translate-y-0 duration-300">
                                 <div className="flex items-center justify-between">
@@ -56,7 +56,7 @@ export default function BlogCards() {
                     <div className="xl:col-span-4 md:col-span-6 col-span-12">
                         <div className="relative overflow-hidden group before:absolute before:inset-0 before:bg-linear-to-t before:from-black/30 before:to-black/0 before:z-1 xl:before:translate-y-full hover:before:translate-y-0 before:duration-300">
                             <div className="relative overflow-hidden">
-                                <Image src={IMAGES.blogimg3} alt="/" className="size-full object-cover" />
+                                <Image src={IMAGES.blogimg3} alt="Travel guide article" className="size-full object-cover" />
                             </div>
                             <div className="absolute bottom-0 left-0 w-full sm:p-7.5 p-5 z-2 xl:translate-y-full group-hover:translate-y-0 duration-300">
                                 <div className="flex items-center justify-between">

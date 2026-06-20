@@ -15,9 +15,9 @@ export default function ServiceBanner() {
                     <div className="lg:col-span-4 col-span-12 wow fadeInRight" data-wow-delay="1s">
                         <div className="flex items-center gap-3.5">
                             <div>
-                                <Image src={IMAGES.avatar1} alt="/" className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1" />
-                                <Image src={IMAGES.avatar2} alt="/" className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1" />
-                                <Image src={IMAGES.avatar3} alt="/" className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1" />
+                                <Image src={IMAGES.avatar1} alt="Client avatar" className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1" />
+                                <Image src={IMAGES.avatar2} alt="Client avatar" className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1" />
+                                <Image src={IMAGES.avatar3} alt="Client avatar" className="inline-block sm:size-15 size-10 -me-3.25 last:me-0 rounded-full border-2 border-white relative object-cover duration-500 hover:z-1" />
                             </div>
                             <div>
                                 <span className="xl:text-xl sm:text-lg text-sm text-secondary block font-light"><strong className="font-bold">2.5k</strong> client in</span>

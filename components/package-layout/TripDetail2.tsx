@@ -20,7 +20,7 @@ export default function TripDetail2({ pkg }: PackageProps) {
                             <span className="absolute  sm:bottom-1/6 bottom-[15%] 2xxl:left-1/2 sm:left-0 left-1/12 flex flex-col items-center justify-center xl:size-49 lg:size-40 sm:size-30 size-20 z-1 -rotate-[7deg]">
                                 <span className="font-title font-normal xl:text-3xl lg:text-2xl sm:text-xl text-base">From</span>
                                 <span className="text-secondary font-title font-semibold leading-none xl:text-[58px] lg:text-4xxl sm:text-3xl text-2xl">$1299</span>
-                                <Image src={IMAGES.star} alt="/" className="absolute -z-1 animate-rotate xl:size-49 lg:size-40 sm:size-30 size-20" />
+                                <Image src={IMAGES.star} alt="Price badge" className="absolute -z-1 animate-rotate xl:size-49 lg:size-40 sm:size-30 size-20" />
                             </span>
                         </div>
                     </div>

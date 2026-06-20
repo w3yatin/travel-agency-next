@@ -5,8 +5,10 @@ import { Thumbs } from "swiper/modules";
 import Image from "next/image";
 import { IMAGES } from "@/utilities/Constants";
 
+import type { Swiper as SwiperType } from "swiper";
+
 export default function ImageThumbSwiper() {
-    const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+    const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
     return(
         <div className="relative overflow-hidden">
             <Swiper
